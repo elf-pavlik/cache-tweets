@@ -36,9 +36,9 @@ db.save('_design/tweets', {
     byScreenName: {
       map: function(doc) {
         emit(doc.user.screen_name.toLowerCase(), doc);
-        if(doc.entities.user_mantions.length > 0) {
-          for(i=0;i<doc.entities.user_mantions.length;i++){
-            emit(doc.entities.user_mantions[i].screen_name.toLowerCase(), doc);
+        if(doc.entities.user_mentions.length > 0) {
+          for(i=0;i<doc.entities.user_mentions.length;i++){
+            emit(doc.entities.user_mentions[i].screen_name.toLowerCase(), doc);
           }
         }
       }
